@@ -1,0 +1,13 @@
+body{
+  background-color: blue;
+}
+
+div.note {
+  height: 150px;
+  width: 150px;
+  background-color: purple;
+}
+
+div.note button {
+  margin: 2px;
+}

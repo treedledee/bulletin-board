@@ -1,8 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Greeting from './components/Greeting';
+
+import style from "./style/style.css";
+import Note from './components/Note';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Note />
+      </div>
+    );
+  }
+}
 
 ReactDOM.render(
-  <Greeting name="World"/>,
+  <App />,
   document.getElementById('container')
 );
