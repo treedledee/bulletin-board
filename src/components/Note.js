@@ -10,8 +10,8 @@ var Note = React.createClass({
   },
 
   save: function() {
-    let val = this.refs.newText.getDOMNode().value;
-    //alert("TODO: save note value and val");
+    let val = this.refs.newText.value;
+    alert("TODO: save note value: "+val);
     this.setState({ editing: false });
   },
 
@@ -42,7 +42,7 @@ var Note = React.createClass({
 
   render: function() {
     return (this.state.editing ? this.renderForm() : this.renderDisplay());
-  }
+  },
 });
 
 Note.propTypes = {

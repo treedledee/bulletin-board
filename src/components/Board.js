@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Note from './Note';
 
 var Board = React.createClass({
@@ -26,7 +27,7 @@ var Board = React.createClass({
   render: function() {
     return (
       <div className="board">
-        {this.state.notes.map(function(note, i){
+        {this.state.notes.map(function(note, i) {
           return (
             <Note key={i}>{note}</Note>
             );
@@ -36,3 +37,5 @@ var Board = React.createClass({
   }
 
 });
+
+export default Board;

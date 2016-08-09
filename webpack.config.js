@@ -33,13 +33,13 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.html$/,
-        loader: "file?name=[name].[ext]"
+        test: /\.(js|jsx)/,
+        exclude: /node_modules/,
+        loaders: ["react-hot", "babel-loader"]
       },
       {
-      test: /\.(js|jsx)/,
-      exclude: /node_modules/,
-      loaders: ["react-hot", "babel-loader"]
+        test: /\.html$/,
+        loader: "file?name=[name].[ext]"
       },
       {
         test: /\.css$/,
