@@ -6,6 +6,7 @@ div.note {
   width: 150px;
   border: 2px solid;
   margin: 4px;
+  position: absolute;
 }
 
 div.note button {

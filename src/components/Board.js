@@ -16,22 +16,51 @@ var Board = React.createClass({
 
   getInitialState: function() {
     return {
-      notes: [
-        'one',
-        'two',
-        'three'
-      ]
+      notes: []
     };
+  },
+
+  nextId: function() {
+    this.uniqueId = this.uniqueId || 0;
+    return this.uniqueId++;
+  },
+
+  add: function(text) {
+    var arr = this.state.notes;
+    arr.push({
+      id: this.nextId(),
+      note: text
+    });
+    this.setState({notes: arr});
+  },
+
+  update: function(newText, i) {
+    var arr = this.state.notes;
+    arr[i].note = newText;
+    this.setState({notes: arr});
+  },
+
+  remove: function(i) {
+    var arr = this.state.notes;
+    arr.splice(i, 1);
+    this.setState({notes: arr});
+  },
+
+  eachNote: function(note, i) {
+    return (        
+        <Note key={note.id} 
+              index={i} 
+              onChange={this.update}
+              onRemove={this.remove}
+        >{note.note}</Note>
+      );
   },
 
   render: function() {
     return (
       <div className="board">
-        {this.state.notes.map(function(note, i) {
-          return (
-            <Note key={i}>{note}</Note>
-            );
-        })}
+        <button onClick={this.add.bind(null, "new note")} className="btn btn-success btn-sm glyphicon glyphicon-plus"/>
+        {this.state.notes.map(this.eachNote)}
       </div>
     );
   }
