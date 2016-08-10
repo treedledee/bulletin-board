@@ -13,6 +13,11 @@ var Note = React.createClass({
     };
   },
 
+  componentDidMount: function() {
+    console.log(this);
+    $(this).draggable();
+  },
+
   randomBetween: function(min, max) {
     return (min + Math.ceil(Math.random() * max));
   },
