@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Board />
+        <Board count={10}/>
       </div>
     );
   }

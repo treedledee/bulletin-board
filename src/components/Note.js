@@ -15,7 +15,8 @@ var Note = React.createClass({
 
   componentDidMount: function() {
     console.log(this);
-    $(this).draggable();
+    // TODO: figure out how to make it draggable
+    // $(this).draggable();
   },
 
   randomBetween: function(min, max) {
